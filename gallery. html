@@ -10,9 +10,9 @@
       font-family: 'Roboto', Arial, sans-serif;
       background: #f8f8fc;
       color: #22223b;
-      min-height: 100vh;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     header {
       background: linear-gradient(120deg, #6C63FF 0%, #FF6CAB 100%);
@@ -26,7 +26,6 @@
       font-weight: 800;
       font-size: 2.2rem;
       letter-spacing: 2px;
-      color: #fff;
       margin-bottom: 6px;
       text-shadow: 0 2px 8px rgba(0,0,0,0.07);
     }
@@ -68,68 +67,60 @@
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
       margin-top: 8px;
-      background: #f8f8fc;
-      border-radius: 18px;
-      padding: 14px 4px 28px 4px;
-      box-shadow: 0 2px 16px 1px rgba(108,99,255,0.08);
+      padding-bottom: 32px;
     }
-    .post {
+    .square {
       background: #fff;
-      border-radius: 18px;
+      border-radius: 13px;
       box-shadow: 0 4px 18px 0 rgba(255,101,132,0.10), 0 1.5px 6px 0 rgba(108,99,255,0.10);
       overflow: hidden;
+      position: relative;
+      aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      cursor: pointer;
       transition: box-shadow 0.16s, transform 0.14s;
-      position: relative;
     }
-    .post:hover {
+    .square:hover {
       box-shadow: 0 6px 26px 0 rgba(255,101,132,0.17), 0 2.5px 12px 0 rgba(108,99,255,0.13);
       transform: translateY(-4px) scale(1.025);
     }
-    .post img {
+    .square img {
       width: 100%;
-      height: 270px;
+      height: 100%;
       object-fit: cover;
-      background: #e0e0e0;
-      border-bottom: 2px solid #6C63FF;
-      border-radius: 18px 18px 0 0;
-      transition: filter 0.17s;
       display: block;
+      transition: filter 0.17s;
     }
-    .post:hover img {
+    .square:hover img {
       filter: brightness(0.96) saturate(1.12);
     }
-    .post-caption {
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(0deg,rgba(0,0,0,0.64) 60%,rgba(0,0,0,0.0));
+      color: #fff;
       font-family: 'Poppins', Arial, sans-serif;
       font-weight: 600;
-      font-size: 1.07rem;
-      color: #FF6584;
-      padding: 15px 14px 6px 14px;
-      text-align: center;
-      letter-spacing: 0.4px;
-    }
-    .post-desc {
-      padding: 0 18px 18px 18px;
-      font-size: 1rem;
-      color: #6c757d;
-      text-align: center;
-      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 1.06rem;
+      letter-spacing: 0.2px;
+      padding: 12px 10px 6px 12px;
+      box-sizing: border-box;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.16);
     }
     @media (max-width: 700px) {
       header h1 { font-size: 1.45rem; }
       nav ul { gap: 12px; }
       main { padding: 17px 1vw 14px 1vw; }
-      .gallery-grid { gap: 12px; padding: 9px 0; }
-      .post img { height: 36vw; min-height: 140px; }
+      .gallery-grid { gap: 9px; }
     }
     @media (max-width: 480px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .post img { height: 54vw; min-height: 110px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
     }
     footer {
       background: linear-gradient(120deg, #6C63FF 0%, #FF6CAB 100%);
@@ -155,15 +146,20 @@
     </nav>
   </header>
   <main>
-    <h2>Gallery</h2>
+    <h2>Artworks</h2>
     <div class="gallery-grid">
-      <!-- Add your posts below: -->
-      <div class="post">
+      <!-- Artworks: Duplicate and change image/caption as needed -->
+      <div class="square">
         <img src="sunset-painting.jpg" alt="Sunset Painting">
-        <div class="post-caption">Sunset Painting</div>
-        <div class="post-desc">A vibrant sunset scene, celebrating the beauty of dusk.</div>
+        <div class="caption">Sunset Painting</div>
       </div>
-      <!-- For more images, copy and edit the block above -->
+      <!-- Example: Add more squares below -->
+      <!--
+      <div class="square">
+        <img src="your-next-image.jpg" alt="Your Next Artwork">
+        <div class="caption">Your Artwork Title</div>
+      </div>
+      -->
     </div>
   </main>
   <footer>
