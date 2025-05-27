@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Gaurav Art</title>
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <nav>
+      <a href="index</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="order.html">Order</a> |
+      <a href="message.html" style="font-weight: bold;">Message</a> |
+      <a href="inbox.html">Inbox</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Send a Message</h2>
+    <form action="https://usebasin.com/f/38afde828a45" method="POST">
+      <label>Name:<br>
+        <input type="text" name="name" required>
+      </label><br><br>
+      <label>Email:<br>
+        <input type="email" name="email" required>
+      </label>Message:<br>
+        <textarea name="message" required></textarea>
+      </label><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+  <footer>
+    <hr>
+    &copy; 2025 Gaurav Art Gallery
+  </footer>
+</body>
+</html>
