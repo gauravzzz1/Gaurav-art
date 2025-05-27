@@ -1,148 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Art Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-            background: #fafafa;
-            color: #222;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #fff;
-            padding: 24px 0 12px 0;
-            box-shadow: 0 2px 8px 0 rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        header h1 {
-            margin: 0 0 8px 0;
-            font-family: 'Montserrat', Arial, sans-serif;
-            font-weight: 700;
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            color: #2c3e50;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 8px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #3498db;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: #2c3e50;
-        }
-        main {
-            padding: 32px 16px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        section {
-            margin-bottom: 48px;
-        }
-        h2 {
-            font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 1.6rem;
-            color: #2c3e50;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-        p {
-            font-family: 'Roboto', Arial, sans-serif;
-            font-size: 1.1rem;
-            color: #222;
-            margin-bottom: 12px;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-            margin-top: 20px;
-        }
-        .artwork {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-            overflow: hidden;
-            text-align: center;
-            padding: 12px;
-        }
-        .artwork img {
-            max-width: 100%;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            object-fit: cover;
-        }
-        footer {
-            background: #fff;
-            text-align: center;
-            padding: 18px 0;
-            border-top: 1px solid #eee;
-            font-size: 0.95rem;
-            color: #999;
-        }
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            main {
-                padding: 12px 4px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaurav Art Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #fff;
+      padding: 20px 0 10px 0;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #2c3e50;
+      font-size: 2.2rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 8px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #3498db;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #2c3e50;
+    }
+    main {
+      padding: 32px 10px 24px 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-weight: 700;
+      text-align: center;
+    }
+    /* Instagram style gallery */
+    .insta-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .insta-post {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      aspect-ratio: 1/1;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .insta-post img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px 18px 0 0;
+      display: block;
+      background: #eee;
+      transition: transform 0.2s;
+    }
+    .insta-post:hover img {
+      transform: scale(1.04);
+    }
+    .insta-caption {
+      padding: 14px 10px 8px 10px;
+      text-align: left;
+      width: 100%;
+      font-size: 1.05rem;
+      color: #333;
+      font-weight: 500;
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 650px) {
+      .insta-post img { height: 32vw; }
+      .insta-gallery { gap: 10px; }
+    }
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 18px 0;
+      border-top: 1px solid #eee;
+      font-size: 0.95rem;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Gaurav Art Gallery</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to Gaurav Art Gallery</h2>
-            <p>Discover unique and inspiring artworks by Gaurav. Explore our collection and get in touch for commissions or inquiries.</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>Gaurav Art Gallery is a curated space showcasing original artworks by Gaurav. With a passion for creativity and expression, each piece tells a story and brings color to life.</p>
-        </section>
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <div class="artwork">
-                    <img src="sunset-painting.jpg" alt="Sunset Painting">
-                    <p>Sunset Painting</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:garrii7249@gmail.com">garrii7249@gmail.com</a></p>
-            <p>Phone: <a href="tel:7249273583">7249273583</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Gaurav Art Gallery. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>Gaurav Art Gallery</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h2>Welcome to Gaurav Art Gallery</h2>
+      <p style="text-align:center;">Discover unique and inspiring artworks by Gaurav, showcased in an Instagram-style gallery. Explore and enjoy!</p>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p style="text-align:center;">Gaurav Art Gallery is a curated space showcasing original artworks. Each piece is crafted with passion and creativity.</p>
+    </section>
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="insta-gallery">
+        <!-- Instagram-style post -->
+        <div class="insta-post">
+          <img src="sunset-painting.jpg" alt="Sunset Painting" />
+          <div class="insta-caption">Sunset Painting</div>
+        </div>
+        <!-- Add more posts below by copying the block above and changing filename/caption -->
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p style="text-align:center;">Email: <a href="mailto:garrii7249@gmail.com">garrii7249@gmail.com</a><br/>
+         Phone: <a href="tel:7249273583">7249273583</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Gaurav Art Gallery. All rights reserved.</p>
+  </footer>
 </body>
 </html>
