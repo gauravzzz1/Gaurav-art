@@ -155,10 +155,14 @@
       </div>
       <!-- Example: Add more squares below -->
       <!--
-      <div class="square">
-        <img src="your-next-image.jpg" alt="Your Next Artwork">
-        <div class="caption">Your Artwork Title</div>
-      </div>
+     <div class="square">
+  <img src="Pencilsketch1.jpg" alt="Pencil Sketch 1">
+  <div class="caption">Pencil Sketch 1</div>
+</div>
+<div class="square">
+  <img src="Sunsetpainting.jpg" alt="Sunset Painting">
+  <div class="caption">Sunset Painting</div>
+</div>
       -->
     </div>
   </main>
