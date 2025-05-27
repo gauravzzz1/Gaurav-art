@@ -1,2 +1,1 @@
-# Gaurav-art
-My art portfolio website 
+GS Art
