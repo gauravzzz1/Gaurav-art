@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me | Gaurav Art</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Message | Gaurav Art Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { background: #f4f6f8; color: #0d2538; font-family: 'Inter', Arial, sans-serif; margin: 0; min-height: 100vh; }
+    header { background: #0d2538; color: #fff; padding: 32px 0 18px 0; text-align: center; box-shadow: 0 2px 16px 0 rgba(13,37,56,0.08); }
+    header h1 { font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 2rem; letter-spacing: 2px; margin-bottom: 10px; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; margin: 0; padding: 0; }
+    nav a { font-family: 'Montserrat', Arial, sans-serif; text-decoration: none; color: #fff; font-weight: 600; font-size: 1rem; transition: color 0.18s, border-bottom 0.18s; border-bottom: 2px solid transparent; padding-bottom: 2px; letter-spacing: 0.5px; }
+    nav a:hover, nav a.active { color: #35b6a9; border-bottom: 2px solid #35b6a9; }
+    main { max-width: 540px; margin: 40px auto 0 auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px 0 rgba(13,37,56,0.09); padding: 36px 26px 32px 26px; }
+    h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.6rem; color: #0d2538; margin-bottom: 22px; font-weight: 700; text-align: center; letter-spacing: 1.2px; }
+    form { display: flex; flex-direction: column; gap: 18px; }
+    label { font-weight: 600; color: #0d2538; margin-bottom: 6px; font-size: 1.04rem; }
+    input, textarea { font-family: 'Inter', Arial, sans-serif; font-size: 1rem; border: 1.5px solid #e1e6ea; border-radius: 7px; padding: 10px; background: #f8fafb; color: #0d2538; transition: border 0.17s; margin-bottom: 4px; }
+    input:focus, textarea:focus { outline: none; border: 1.5px solid #35b6a9; }
+    textarea { min-height: 90px; resize: vertical; }
+    button { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.1rem; background: #35b6a9; color: #fff; border: none; padding: 13px 0; border-radius: 8px; font-weight: 700; cursor: pointer; transition: background 0.17s; margin-top: 8px; box-shadow: 0 2px 8px 0 rgba(53,182,169,0.09); }
+    button:hover { background: #269488; }
+    .form-note { color: #777; font-size: 0.95rem; margin-bottom: 14px; margin-top: -12px; text-align: center; }
+    @media (max-width: 600px) { main { border-radius: 0; box-shadow: none; padding: 16px 3vw 20px 3vw; } nav ul { gap: 14px; } }
+    footer { background: #0d2538; text-align: center; padding: 18px 0 12px 0; color: #fff; font-size: 1rem; border-top: 1.5px solid #eee4; font-family: 'Montserrat', Arial, sans-serif; letter-spacing: 1px; margin-top: 36px; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Contact Me</h1>
+    <h1>Message</h1>
     <nav>
-      <a href="index</a> |
-      <a href="gallery.html">Gallery</a> |
-      <a href="order.html">Order</a> |
-      <a href="message.html" style="font-weight: bold;">Message</a> |
-      <a href="inbox.html">Inbox</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="message.html" class="active">Message</a></li>
+        <li><a href="inbox.html">Inbox</a></li>
+      </ul>
     </nav>
   </header>
   <main>
     <h2>Send a Message</h2>
+    <p class="form-note">
+      Have a question or want to get in touch? Fill out the form below.
+    </p>
     <form action="https://usebasin.com/f/38afde828a45" method="POST">
-      <label>Name:<br>
-        <input type="text" name="name" required>
-      </label><br><br>
-      <label>Email:<br>
-        <input type="email" name="email" required>
-      </label>Message:<br>
-        <textarea name="message" required></textarea>
-      </label><br><br>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+
       <button type="submit">Send Message</button>
     </form>
   </main>
   <footer>
-    <hr>
-    &copy; 2025 Gaurav Art Gallery
+    &copy; 2025 Gaurav Art Gallery. All rights reserved.
   </footer>
 </body>
 </html>
