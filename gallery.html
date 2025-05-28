@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', Arial, sans-serif; background: #f4f6f8; margin: 0; min-height:100vh;}
-    /* Hamburger & Sidebar styles (same as index.html) */
     .hamburger { position: absolute; left: 24px; top: 26px; width: 36px; height: 36px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; z-index: 1101;}
     .bar { width: 28px; height: 4px; background: #35b6a9; margin: 3.5px 0; border-radius: 2px; transition: 0.3s all;}
     .sidebar { position: fixed; top: 0; left: -240px; width: 220px; height: 100%; background: #132d40; color: #fff; box-shadow: 2px 0 16px #0002; z-index: 1100; padding-top: 70px; transition: left 0.32s cubic-bezier(.87,-.41,.19,1.44); display: flex; flex-direction: column;}
@@ -32,7 +31,7 @@
   </style>
 </head>
 <body>
-  <div id="sidebar" class="sidebar" aria-label="Site navigation">
+="Site navigation">
     <button class="close-btn" onclick="toggleSidebar()" aria-label="Close Menu">&times;</button>
     <a href="index.html">Home</a>
     <a href="gallery.html" class="active">Gallery</a>
@@ -52,67 +51,21 @@
   <main>
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <!-- Example gallery items, replace image src with your art -->
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Artwork 1">
-        <h3>Sunset Over Fields</h3>
-        <p>Oil on canvas, 2024</p>
+        <img src="FB_IMG_1748285875066.jpg" alt="Artwork 1">
+        <h3>FB_IMG_1748285875066</h3>
+        <p>Mixed Media</p>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Artwork 2">
-        <h3>Blue Lake</h3>
-        <p>Acrylic, 2023</p>
+        <img src="Pencilsketch1.jpg" alt="Artwork 2">
+        <h3>Pencil Sketch</h3>
+        <p>Pencil on Paper</p>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Artwork 3">
-        <h3>Forest Path</h3>
-        <p>Watercolor, 2023</p>
+        <img src="sunset-painting.jpg" alt="Artwork 3">
+        <h3>Sunset Painting</h3>
+        <p>Painting</p>
       </div>
-      <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Gallery - Gaurav Art Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial, sans-serif; background: #f4f6f8; margin: 0;}
-    header { background: #0d2538; color: #fff; padding: 24px 0 18px 0; text-align: center;}
-    header h1 { font-weight: bold; font-size: 2.2rem; letter-spacing: 2px; margin: 0;}
-    header p { font-size: 1.12rem; margin: 4px 0 8px 0; color: #9fdedc;}
-    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; padding: 40px 0 40px 0;}
-    .gallery-item { background: #fff; border-radius: 10px; box-shadow: 0 2px 16px 0 rgba(13,37,56,0.09);gallery-item img { width: 100%; height: auto; display: block; border-radius: 7px;}
-    .caption { text-align: center; margin-top: 12px; color: #0d2538; font-weight: bold;}
-    footer { background: #0d2538; text-align: center; padding: 18px 0 12px 0; color: #fff; font-size: 1rem; margin-top: 36px;}
-    @media (max-width: 700px) {
-      .gallery { gap: 14px; padding: 20px 0;}
-      .gallery-item { width: 95vw; max-width: 340px; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Gaurav Art Gallery</h1>
-    <p>Gallery</p>
-  </header>
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="FB_IMG_1748285875066.jpg" alt="Artwork 1">
-      <div class="caption">FB_IMG_1748285875066.jpg</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Pencilsketch1.jpg" alt="Artwork 2">
-      <div class="caption">Pencilsketch1.jpg</div>
-    </div>
-    <div class="gallery-item">
-      <img src="sunset-painting.jpg" alt="Artwork 3">
-      <div class="caption">sunset-painting.jpg</div>
-    </div>
-  </div>
-  <footer>
-    &copy; 2025 Gaurav Art Gallery
-  </footer>
-</body>
-</html>Add more artwork as needed -->
     </div>
   </main>
   <footer>
@@ -122,8 +75,7 @@
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebarOverlay');
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('open');
+      sidebar.classList.classList.toggle('open');
       if (sidebar.classList.contains('open')) {
         setTimeout(() => { sidebar.querySelector('.close-btn').focus(); }, 250);
       }
