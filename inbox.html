@@ -16,4 +16,82 @@
     .sidebar .close-btn { position: absolute; top: 18px; right: 18px; background: none; border: none; font-size: 2rem; color: #b2eceb; cursor: pointer; z-index: 1112;}
     .sidebar-overlay { display: none; position: fixed; z-index: 1099; left: 0; top: 0; width: 100vw; height: 100vh; background: #0006; transition: opacity 0.23s; opacity: 0;}
     .sidebar-overlay.open { display: block; opacity: 1;}
-    header { background:
+    header { background: #0d2538; color: #fff; padding: 24px 0 18px 0; text-align: center; position: relative; box-shadow: 0 2px 16px 0 rgba(13,37,56,0.08);}
+    header h1 { font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 6px; margin-top: 0;}
+    header p { font-size: 1.12rem; margin: 0 0 8px 0; color: #9fdedc;}
+    main { max-width: 510px; margin: 60px auto 0 auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px 0 rgba(13,37,56,0.09); padding: 36px 36px 32px 36px;}
+    main h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 2rem; color: #0d2538; margin-bottom: 22px; font-weight: 700; text-align: center;}
+    form { display: flex; flex-direction: column; gap: 17px; }
+    label { font-weight: 600; color: #0d2538; margin-bottom: 4px;}
+    input, textarea { font-size: 1rem; border-radius: 7px; border: 1.3px solid #b2eceb; padding: 9px 13px; background: #f4f6fa;}
+    input:focus, textarea:focus { outline: 2px solid #35b6a9;}
+    button[type="submit"] { background: #35b6a9; color: #fff; border: none; border-radius: 7px; padding: 12px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: background 0.18s;}
+    button[type="submit"]:hover { background: #2b9284;}
+    .success-msg { background: #d5f5e3; color: #08775a; border-radius: 7px; padding: 13px 10px; font-weight: 600; text-align: center; margin-bottom: 10px;}
+    @media (max-width: 700px) { main { border-radius: 0; box-shadow: none; padding: 16px 3vw 20px 3vw; } }
+    footer { background: #0d2538; text-align: center; padding: 18px 0 12px 0; color:div id="sidebar" class="sidebar" aria-label="Site navigation">
+    <button class="close-btn" onclick="toggleSidebar()" aria-label="Close Menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="order.html">Order</a>
+    <a href="inbox.html" class="active">Inbox</a>
+  </div>
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()" tabindex="-1"></div>
+  <header>
+    <div class="hamburger" onclick="toggleSidebar()" aria-label="Open Menu" tabindex="0">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <h1>Gaurav Art Gallery</h1>
+    <p>Leave a Message</p>
+  </header>
+  <main>
+    <h2>Inbox / Contact</h2>
+    <form id="messageForm" autocomplete="off">
+      <div>
+        <label for="name">Your Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Your Message *</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+      <div id="successMsg" class="success-msg" style="display:none;">
+        Thank you! Your message has been received.
+      </div>
+    </form>
+  </main>
+  <footer>
+    &copy; 2025 Gaurav Art Gallery
+  </footer>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+      if (sidebar.classList.contains('open')) {
+        setTimeout(() => { sidebar.querySelector('.close-btn').focus(); }, 250);
+      }
+    }
+    document.querySelector('.hamburger').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') { toggleSidebar(); }
+    });
+    // Fake message success
+    document.getElementById("messageForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("successMsg").style.display = "block";
+      setTimeout(function(){
+        document.getElementById("successMsg").style.display = "none";
+        document.getElementById("messageForm").reset();
+      }, 2400);
+    });
+  </script>
+</body>
+</html>
