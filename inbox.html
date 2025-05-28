@@ -1,95 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Inbox - Gaurav Art Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', Arial, sans-serif; background: #f4f6f8; margin: 0; min-height:100vh;}
-    .hamb26px; width: 36px; height: 36px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; z-index: 1101;}
-    .bar { width: 28px; height: 4px; background: #35b6a9; margin: 3.5px 0; border-radius: 2px; transition: 0.3s all;}
-    .sidebar { position: fixed; top: 0; left: -240px; width: 220px; height: 100%; background: #132d40; color: #fff; box-shadow: 2px 0 16px #0002; z-index: 1100; padding-top: 70px; transition: left 0.32s cubic-bezier(.87,-.41,.19,1.44); display: flex; flex-direction: column;}
-    .sidebar.open { left: 0;}
-    .sidebar a { display: block; color: #fff; text-decoration: none; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; font-size: 1.13rem; padding: 14px 26px; border-left: 4px solid transparent; letter-spacing: 0.6px; transition: background 0.18s, border 0.18s, color 0.18s;}
-    .sidebar a:hover, .sidebar a.active { background: #213e53; border-left: 4px solid #35b6a9; color: #35b6a9;}
-    .sidebar .close-btn { position: absolute; top: 18px; right: 18px; background: none; border: none; fixed; z-index: 1099; left: 0; top: 0; width: 100vw; height: 100vh; background: #0006; transition: opacity 0.23s; opacity: 0;}
-    .sidebar-overlay.open { display: block; opacity: 1;}
-    header { background:,0.08);}
-    header h1 { font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 6px; margin-top: 0;}
-    header p { font-size: 1.12rem; margin: 0 0 8px 0; color: #9fdedc;}
-    main { max-width: 510px; margin: 60px auto 0 auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px 0 rgba(13,37,56,0.09); padding: 36px 36px 32px 36px;}
-    main h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 2rem; color: #0d2538; margin-bottom:  { display: flex; flex-direction: column; gap: 17px; }
-    label { font-weight: 600; color: #0d2538; margin-bottom: 4px;}
-    input, textarea { font-size: 1rem; border-radius: 7px; border: 1.3px solid #b2eceb; padding: 9px 13px; background: #f4f6fa;}
-    input:focus, textarea:focus { outline: 2px solid #35b6a9;}
-    button[type="submit"] { background: #35b6a9; none; border-radius: 7px; padding: 12px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: background 0.18s;}
-    button[type="submit"]:hover { background: #2b9284;}
-    .success-msg { background: #d5f5e3; color: #08775a; border-radius; margin-bottom: 10px;}
-    @media (max-width: 700px) { main { border-radius: 0; box-shadow: none; padding: 16px 3vw 20px 3vw; } }
-    footer { background: #0d2538; text-align: center; padding: 18px 0 12px 0; color: #fff; font-size: 1rem; margin-top: 36px;}
-  </style">&times;</button>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="order.html">Order</a>
-    <a href="inbox.html" class="active">Inbox</a>
-  </div>
-  <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()" tabindex="-1"></div>
-  <header>
-    <div class="hamburger" onclick="toggleSidebar()" aria-label="Open Menu" tabindex="0">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <h1>Gaurav Art Gallery</h1>
-    <p>Leave a Message</p>
-  </header>
-  <main>
-    <h2>Inbox / Contact</h2>
-    <form id="messageForm" autocomplete="off">
-      <div>
-        <label for="name">Your Name *</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div>
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="message">Your Message *</label>
-        <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-      <div id="successMsg" class="success-msg" style="display:none;">
-        Thank you! Your message has been received.
-      </div>
-    </form>
-  </main>
-  <footer>
-    &copy; 2025 Gaurav Art Gallery
-  </footer>
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('sidebarOverlay');
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('open');
-      if (sidebar.classList.contains('open')) {
-        setTimeout(() => { sidebar.querySelector('.close-btn').focus(); }, 250);
-      }
-    }
-    document.querySelector('.hamburger').addEventListener('keydown', function(event) {
-      if (event.key === 'Enter' || event.key === ' ') { toggleSidebar(); }
-    });
-    // Fake message success
-    document.getElementById("messageForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      document.getElementById("successMsg").style.display = "block";
-      setTimeout(function(){
-        document.getElementById("successMsg").style.display = "none";
-        document.getElementById("messageForm").reset();
-      }, 2400);
-    });
-  </script>
-</body>
+<html>
+  <head>
+    <title>Test Inbox</title>
+  </head>
+  <body>
+    <h1>This is a test message!</h1>
+    <p>If you see this, your HTML file is working.</p>
+  </body>
 </html>
