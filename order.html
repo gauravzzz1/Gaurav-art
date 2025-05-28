@@ -1,252 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Order Custom Artwork | Gaurav Art Gallery</title>
+  <meta charset="UTF-8">
+  <title>Order - Gaurav Art Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-      font-family: 'Inter', Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      background: rgba(13, 37, 56, 0.93);
-      color: #fff;
-      padding: 2rem 1rem 1rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 16px 0 rgba(13,37,56,0.08);
-    }
-    header h1 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 2.3rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.4rem;
-    }
-    header p {
-      color: #b2eceb;
-      font-size: 1.1rem;
-      margin: 0 0 1rem 0;
-      font-family: 'Inter', Arial, sans-serif;
-      letter-spacing: 0.5px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2.2rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      font-family: 'Montserrat', Arial, sans-serif;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: color 0.18s, border-bottom 0.18s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-      letter-spacing: 0.4px;
-    }
-    nav a:hover, nav .active {
-      color: #35b6a9;
-      border-bottom: 2px solid #35b6a9;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 600px;
-      padding: 2rem 1rem;
-    }
-    .order-card {
-      background: #fff;
-      max-width: 410px;
-      width: 100%;
-      border-radius: 2rem;
-      box-shadow: 0 8px 32px 0 rgba(13,37,56,0.18);
-      padding: 2.7rem 2rem 2rem 2rem;
-      margin: 2rem auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeIn 1s cubic-bezier(0.42,0,0.58,1);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(32px);}
-      to   { opacity: 1; transform: none;}
-    }
-    .order-card h2 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: #35b6a9;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    .order-card p {
-      color: #444;
-      font-size: 1.12rem;
-      text-align: center;
-      margin-bottom: 1.6rem;
-      margin-top: 0.3rem;
-    }
-    form {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    .form-group {
-      position: relative;
-      margin-bottom: 0.6rem;
-    }
-    .form-input {
-      width: 100%;
-      font-size: 1.05rem;
-      border: 1.7px solid #e1e6ea;
-      background: #f8fafb;
-      color: #0d2538;
-      border-radius: 0.7rem;
-      padding: 1.2rem 1rem 0.5rem 1rem;
-      transition: border 0.18s;
-      font-family: 'Inter', Arial, sans-serif;
-      outline: none;
-      box-sizing: border-box;
-    }
-    .form-input:focus {
-      border-color: #35b6a9;
-    }
-    .form-label {
-      position: absolute;
-      left: 1rem;
-      top: 1.1rem;
-      color: #888;
-      font-size: 1rem;
-      pointer-events: none;
-      transition: 0.23s cubic-bezier(0.4,0,0.2,1);
-      font-family: 'Inter', Arial, sans-serif;
-      background: transparent;
-    }
-    .form-input:focus + .form-label,
-    .form-input:not(:placeholder-shown) + .form-label {
-      top: 0.38rem;
-      left: 0.85rem;
-      font-size: 0.88rem;
-      color: #35b6a9;
-      background: #fff;
-      padding: 0 0.2rem;
-    }
-    .form-note {
-      color: #878787;
-      font-size: 0.98rem;
-      text-align: center;
-      margin-bottom: 1.2rem;
-      margin-top: -0.7rem;
-    }
-    .form-group-file {
-      margin-top: 0.3rem;
-      margin-bottom: 0.7rem;
-    }
-    .form-input[type="file"] {
-      background: none;
-      border: none;
-      padding: 0 0 0 1px;
-    }
-    .order-btn {
-      width: 100%;
-      padding: 1rem 0;
-      border: none;
-      border-radius: 0.7rem;
-      background: linear-gradient(90deg, #35b6a9 60%, #269488 100%);
-      color: #fff;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      cursor: pointer;
-      box-shadow: 0 2px 8px 0 rgba(53,182,169,0.11);
-      transition: background 0.14s, transform 0.12s;
-    }
-    .order-btn:hover {
-      background: linear-gradient(90deg, #269488 60%, #35b6a9 100%);
-      transform: translateY(-2px) scale(1.025);
-    }
-    @media (max-width: 540px) {
-      .order-card { padding: 1.3rem 4vw 1.2rem 4vw; border-radius: 0.8rem;}
-      main { padding: 0.6rem;}
-    }
-    footer {
-      background: #0d2538;
-      text-align: center;
-      padding: 1.2rem 0 0.7rem 0;
-      color: #fff;
-      font-size: 1rem;
-      border-top: 1.5px solid #eee4;
-      font-family: 'Montserrat', Arial, sans-serif;
-      letter-spacing: 1px;
-      margin-top: 2.5rem;
-    }
+    body { font-family: 'Inter', Arial, sans-serif; background: #f4f6f8; margin: 0; min-height:100vh;}
+    .hamburger { position: absolute; left: 24px; top: 26px; width: 36px; height: 36px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; z-index: 1101;}
+    .bar { width: 28px; height: 4px; background: #35b6a9; margin: 3.5px 0; border-radius: 2px; transition: 0.3s all;}
+    .sidebar { position: fixed; top: 0; left: -240px; width: 220px; height: 100%; background: #132d40; color: #fff; box-shadow: 2px 0 16px #0002; z-index: 1100; padding-top: 70px; transition: left 0.32s cubic-bezier(.87,-.41,.19,1.44); display: flex; flex-direction: column;}
+    .sidebar.open { left: 0;}
+    .sidebar a { display: block; color: #fff; text-decoration: none; font-family: 'Montserrat', Arial, sans-serif; font-weight: 600; font-size: 1.13rem; padding: 14px 26px; border-left: 4px solid transparent; letter-spacing: 0.6px; transition: background 0.18s, border 0.18s, color 0.18s;}
+    .sidebar a:hover, .sidebar a.active { background: #213e53; border-left: 4px solid #35b6a9; color: #35b6a9;}
+    .sidebar .close-btn { position: absolute; top: 18px; right: 18px; background: none; border: none; font-size: 2rem; color: #b2eceb; cursor: pointer; z-index: 1112;}
+    .sidebar-overlay { display: none; position: fixed; z-index: 1099; left: 0; top: 0; width: 100vw; height: 100vh; background: #0006; transition: opacity 0.23s; opacity: 0;}
+    .sidebar-overlay.open { display: block; opacity: 1;}
+    header { background: #0d2538; color: #fff; padding: 24px 0 18px 0; text-align: center; position: relative; box-shadow: 0 2px 16px 0 rgba(13,37,56,0.08);}
+    header h1 { font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 6px; margin-top: 0;}
+    header p { font-size: 1.12rem; margin: 0 0 8px 0; color: #9fdedc;}
+    main { max-width: 510px; margin: 60px auto 0 auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px 0 rgba(13,37,56,0.09); padding: 36px 36px 32px 36px;}
+    main h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 2rem; color: #0d2538; margin-bottom: 22px; font-weight: 700; text-align: center;}
+    form { display: flex; flex-direction: column; gap: 17px; }
+    label { font-weight: 600; color: #0d2538; margin-bottom: 4px;}
+    input, textarea, select { font-size: 1rem; border-radius: 7px; border: 1.3px solid #b2eceb; padding: 9px 13px; background: #f4f6fa;}
+    input:focus, textarea:focus, select:focus { outline: 2px solid #35b6a9;}
+    button[type="submit"] { background: #35b6a9; color: #fff; border: none; border-radius: 7px; padding: 12px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: background 0.18s;}
+    button[type="submit"]:hover { background: #2b9284;}
+    .success-msg { background: #d5f5e3; color: #08775a; border-radius: 7px; padding: 13px 10px; font-weight: 600; text-align: center; margin-bottom: 10px;}
+    @media (max-width: 700px) { main { border-radius: 0; box-shadow: none; padding: 16px 3vw 20px 3vw; } }
+    footer { background: #0d2538; text-align: center; padding: 18px 0 12px 0; color: #fff; font-size: 1rem; margin-top: 36px;}
   </style>
 </head>
 <body>
+  <div id="sidebar" class="sidebar" aria-label="Site navigation">
+    <button class="close-btn" onclick="toggleSidebar()" aria-label="Close Menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="order.html" class="active">Order</a>
+    <a href="inbox.html">Inbox</a>
+  </div>
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()" tabindex="-1"></div>
   <header>
+    <div class="hamburger" onclick="toggleSidebar()" aria-label="Open Menu" tabindex="0">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
     <h1>Gaurav Art Gallery</h1>
-    <p>Original Paintings & Custom Artwork</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="order.html" class="active">Order</a></li>
-        <li><a href="inbox.html">Inbox</a></li>
-      </ul>
-    </nav>
+    <p>Order a Custom Artwork</p>
   </header>
   <main>
-    <section class="order-card">
-      <h2>Order Custom Art</h2>
-      <p>
-        Commission a unique artwork for your home, office, or gifting.<br>
-        Describe your vision and let’s make it real!
-      </p>
-      <div class="form-note">
-        Your info is confidential. I’ll reply by email within 1-2 days.
+    <h2>Order Your Artwork</h2>
+    <form id="orderForm" autocomplete="off">
+      <div>
+        <label for="name">Your Name *</label>
+        <input type="text" id="name" name="name" required>
       </div>
-      <form action="https://usebasin.com/f/38afde828a45" method="POST" enctype="multipart/form-data" autocomplete="off">
-        <div class="form-group">
-          <input class="form-input" type="text" id="name" name="name" required placeholder=" " />
-          <label class="form-label" for="name">Your Name *</label>
-        </div>
-        <div class="form-group">
-          <input class="form-input" type="email" id="email" name="email" required placeholder=" " />
-          <label class="form-label" for="email">Email Address *</label>
-        </div>
-        <div class="form-group">
-          <textarea class="form-input" id="details" name="details" required placeholder=" " style="resize:vertical; min-height: 80px;"></textarea>
-          <label class="form-label" for="details">Describe your artwork request *</label>
-        </div>
-        <div class="form-group form-group-file">
-          <label for="image" style="font-weight:500; font-size:0.96rem; color:#269488; margin-bottom:0.1rem;">Upload a reference image (optional):</label>
-          <input class="form-input" type="file" id="image" name="image" accept="image/*" />
-        </div>
-        <button type="submit" class="order-btn">Send Order Request</button>
-      </form>
-    </section>
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="type">Type of Artwork *</label>
+        <select id="type" name="type" required>
+          <option value="">Select</option>
+          <option value="Painting">Painting</option>
+          <option value="Portrait">Portrait</option>
+          <option value="Landscape">Landscape</option>
+          <option value="Abstract">Abstract</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="details">Details / Message *</label>
+        <textarea id="details" name="details" rows="4" required placeholder="Describe your custom request..."></textarea>
+      </div>
+      <button type="submit">Place Order</button>
+      <div id="successMsg" class="success-msg" style="display:none;">
+        Thank you! Your order has been submitted.
+      </div>
+    </form>
   </main>
   <footer>
-    &copy; 2025 Gaurav Art Gallery. All rights reserved.
+    &copy; 2025 Gaurav Art Gallery
   </footer>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+      if (sidebar.classList.contains('open')) {
+        setTimeout(() => { sidebar.querySelector('.close-btn').focus(); }, 250);
+      }
+    }
+    document.querySelector('.hamburger').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') { toggleSidebar(); }
+    });
+    // Fake form submission success
+    document.getElementById("orderForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("successMsg").style.display = "block";
+      setTimeout(function(){
+        document.getElementById("successMsg").style.display = "none";
+        document.getElementById("orderForm").reset();
+      }, 2600);
+    });
+  </script>
 </body>
 </html>
