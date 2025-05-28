@@ -31,7 +31,7 @@
   </style>
 </head>
 <body>
-="Site navigation">
+  <div id="sidebar" class="sidebar" aria-label="Site navigation">
     <button class="close-btn" onclick="toggleSidebar()" aria-label="Close Menu">&times;</button>
     <a href="index.html">Home</a>
     <a href="gallery.html" class="active">Gallery</a>
@@ -75,7 +75,8 @@
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebarOverlay');
-      sidebar.classList.classList.toggle('open');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
       if (sidebar.classList.contains('open')) {
         setTimeout(() => { sidebar.querySelector('.close-btn').focus(); }, 250);
       }
